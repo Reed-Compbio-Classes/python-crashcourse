@@ -1,11 +1,9 @@
-## Jan 29, 2020
-
-### repl.it 
-
 We use [repl.it](https://repl.it/) for assignments in this course.  There are three panels for any lab or assignment.
 - The right pane includes instructions
 - The upper left pane is a text editor (you can write multiple lines of code and evaluate them all using the run button).
 - The lower left pane is an interpreter, which takes user input and evaluates each line as you enter it.  Python interpreters have a prompt that begins with `>`.  
+
+## Jan 29, 2020
 
 ### Expressions and Assignments
 
