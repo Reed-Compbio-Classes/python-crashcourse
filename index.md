@@ -89,4 +89,11 @@ where `i` is an integer.  Watch out: **the index starts at 0!** That is, the fir
 
 As a general rule, inputs and outputs of expressions have the same type (e.g. numeric, string, or list). For example, the expression 1+2 outputs a number, while the expression '1'+'2' outputs a string.  In Python3, expressions that involve a `float` and an `int` will output a `float`.
 
+### Built-in Functions
+
+A **function** is an executable block of code.  Each function has a name followed by parentheses which may contain zero or more inputs, or **arguments**.  Functions may return values as well.  Here is a list of some common built-in functions:
+
+| **Description** | **Name** | **Arguments** | **Returns** | **Examples** |
+|---|---|---|---|
+Get the type of an object | `type()` | one `int` | the argument's type | `type(1.0)` <br> `type('a string')`|
 
