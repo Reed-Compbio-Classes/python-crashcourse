@@ -91,9 +91,68 @@ As a general rule, inputs and outputs of expressions have the same type (e.g. nu
 
 ### Built-in Functions
 
-A **function** is an executable block of code.  Each function has a name followed by parentheses which may contain zero or more inputs, or **arguments**.  Functions may return values as well.  Here is a list of some common built-in functions:
+A **function** is an executable block of code.  Each function has a name followed by parentheses which may contain zero or more inputs, or **arguments**.  Functions may return values as well.  
 
- **Description** | **Name** | **Arguments** | **Returns** | **Examples** 
----|---|---|---
-Get the type of an object | `type()` | one `int` | the argument's type | `type(1.0)` <br> `type('a string')`
+| Description  | Name | Num of Arguments | Returns | Examples |
+| --- | --- | --- | --- | --- 
+| Get the type of an object  | `type()`  | one  | the object's type | `type(1.0)` <br> `type('a string')` |
+| Print the arguments to the screen | `print()`  | zero or more | nothing | `print()` <br> `print(145.99)` <br> `print('a',1,'b')` |
+| Get the length of a list | `len()` | one `list` | an `int` | `len([1,2,3,4,5])` | 
+| Get a range of integers | `range()` | one `int` | a `range` object from 0 up to _but not including_ the argument | `range(10)` <br> `range(5)` |
+| Convert an object to a list | `list()` | one | a `list` of the argument | `list(range(5))` |
 
+### For Loops
+
+A **for loop** specifies repeated execution. It allows us to say "for each element in a list, do something."  For loops have a special syntax:
+
+```
+for item in [0,1,2,3]:
+  print(item)
+```
+
+Let's break down the previous two lines:
+- The `for`, `in`, and the colon (`:`) are part of every for loop.
+- There is a list (`[0,1,2,3]`) and a variable name (`item`) that we specified - the list can be any list, and the variable name can be any variable name.  
+- The **indentation** in the second line matters -- all lines that are indented under the `for` statement are executed at each iteration.  In this case, we will print the value assigned to the `item` variable.
+
+For loops work by assigning the variable name (`item`, in this case) to **each element** of the list and executing the lines of code that are indented under the for loop.  The for loop above will print
+
+```
+0
+1
+2
+3
+```
+
+which is exactly the same as if we wrote out each line of the for loop:
+
+```
+item = 0
+print(item)
+item = 1
+print(item)
+item = 2 
+print(item)
+item = 3
+print(item)
+```
+
+For loops can execute multiple lines of code at each iteration, and can iterate over lists containing different elements. For example
+
+```
+myList = [1,'hey','there']
+for loop_var in myList:
+  print(loop_var)
+  print(loop_var,'again')
+```
+
+will print
+
+```
+1
+1 again
+hey
+hey again
+there
+there again
+```
