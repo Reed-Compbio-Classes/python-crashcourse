@@ -93,7 +93,7 @@ As a general rule, inputs and outputs of expressions have the same type (e.g. nu
 
 A **function** is an executable block of code.  Each function has a name followed by parentheses which may contain zero or more inputs, or **arguments**.  Functions may return values as well.  Here is a list of some common built-in functions:
 
-| **Description** | **Name** | **Arguments** | **Returns** | **Examples** |
-|---|---|---|---|
-Get the type of an object | `type()` | one `int` | the argument's type | `type(1.0)` <br> `type('a string')`|
+ **Description** | **Name** | **Arguments** | **Returns** | **Examples** 
+---|---|---|---
+Get the type of an object | `type()` | one `int` | the argument's type | `type(1.0)` <br> `type('a string')`
 
