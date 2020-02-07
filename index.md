@@ -3,7 +3,13 @@ We use [repl.it](https://repl.it/) for assignments in this course.  There are th
 * The upper left pane is a text editor (you can write multiple lines of code and evaluate them all using the run button).
 * The lower left pane is an interpreter, which takes user input and evaluates each line as you enter it.  Python interpreters have a prompt that begins with `>`.  
 
-## Jan 29, 2020
+### PythonTutor
+
+If you are writing code and can't quite figure out why Python is doing something _other_ than what you think it should, [PythonTutor](http://pythontutor.com/) is an **excellent** resource.  It allows you to run your code step-by-step, observing what is stored in memory and what is printed to the console.  
+
+![A screenshot of pythontutor](pythontutor.png)
+
+## Week 1
 
 ### Expressions and Assignments
 
@@ -88,6 +94,8 @@ where `i` is an integer.  Watch out: **the index starts at 0!** That is, the fir
 ### Expression Input and Output Types
 
 As a general rule, inputs and outputs of expressions have the same type (e.g. numeric, string, or list). For example, the expression 1+2 outputs a number, while the expression '1'+'2' outputs a string.  In Python3, expressions that involve a `float` and an `int` will output a `float`.
+
+## Week 2
 
 ### Built-in Functions
 
