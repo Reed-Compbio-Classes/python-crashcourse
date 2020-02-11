@@ -219,7 +219,7 @@ The `prog1` and `prog2` functions take inputs, or **arguments**.  In these funct
 
 The **scope** of a variable is the part of the program where it may be referenced.  Formal parameters (in the function defintions) and other variables assigned within a function only be used within that function.  Functions can communicate information back to the place where it is called by returning values.  Let's walk through the code above as an example.  The first thing Python will do is store these function definitons in memory, skipping over all the contents. 
 
-![scope-1](scope-1.png)
+![scope-1](scope-1.png | width=100)
 
 By the time we are at Line 13 (red arrow), Python has stored three functions in memory (`main`, `prog1`, and `prog2`). Further, Python knows that there is one formal parameter for `prog1` and one formal parameter for `prog2`.  Here, they both happen to be called `num`.  
 
