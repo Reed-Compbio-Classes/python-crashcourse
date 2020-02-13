@@ -102,7 +102,7 @@ As a general rule, inputs and outputs of expressions have the same type (e.g. nu
 A **function** is an executable block of code.  Each function has a name followed by parentheses which may contain zero or more inputs, or **arguments**.  Functions may return values as well.  
 
 | Description  | Name | Num of Arguments | Returns | Examples |
-| --- | --- | --- | --- | --- 
+| --- | --- | --- | --- | --- |
 | Get the type of an object  | `type()`  | one | the object's type | `type(1.0)` <br> `type('a string')` |
 | Print the arguments to the screen | `print()`  | zero or more | nothing | `print()` <br> `print(145.99)` <br> `print('a',1,'b')` |
 | Get the length of a list | `len()` | one `list` or `str` | an `int` | `len([1,2,3,4,5])` | 
@@ -247,5 +247,64 @@ At the end of the `main` function, there are two variables within the function (
 
 ### The Boolean Data Type and Boolean Expressions
 
-A **boolean** is a data type that can only be one of two values: `True` or `False`.  Booleans can appear as outputs or inputs of some expressions (including some new operators): (ended here)
+A **boolean** is a data type that can only be one of two values: `True` or `False`.  Booleans can appear as outputs or inputs of some expressions (including some new operators).
 
+| Operator  | Symbol | Input Types | Return Types | Examples |
+| --- | --- | --- | --- | --- |
+Equality | `==` | numeric or `str` | `boolean` | `1==2` <br> `'a'=='a'` |
+Inequality | `!=` | numeric or `str` | `boolean` | `1!=2` <br> `'a'!='a'` | 
+Less Than  | `<` | numeric | `boolean` | `1<2`<br> `2.0<1.5` |
+Less Than<br>or Equal To | `<=`  | numeric | `boolean` | `1<=1`<br> `2.0<=1.5` |
+Greater Than | `>`  | numeric | `boolean` | `1>2`<br> `2.0>1.5` |
+Greater Than<br>or Equal To | `>=`  | numeric | `boolean` | `1>=1`<br> `2.0>=1.5` |
+And | `and` | `boolean` | `boolean` | `True and False`<br>`4>5 and 6>=6` |
+Or | `or` | `boolean` | `boolean` | `True or False`<br>`4>=5 or 6>=6` |
+Not | `not` | `boolean` | `boolean` | `not True`<br>`not 4<5` |
+In | `in` | mixed types | `boolean` | `'a' in ['a','b','c']`<br>`1 in [0,'a',2]` |
+
+### Conditional Statements
+
+An **IF** statement specifies a block of code only if some condition (e.g. a Boolean expression) is `True`.  It allows us to say "if some value is `True`, do somthing."  IF statements have a special syntax:
+
+```
+x = 4
+y = 10
+if x < y:
+   print('x is less than y')
+```
+Let's break down the previous lines:
+- The first two lines assign integers to variables `x` and `y`.
+- The `if` and the colon (`:`) are part of every IF statement. 
+- There is a Boolean expression (`x < y`), which will evaluate to `True` or `False`.  
+ - If the expression evaluates to `True`, then the indented line will be executed.
+ - If the expression evaluates to `False`, then the indented line will _not_ be executed.
+- Here, the Boolean expression evaluates to `True`, so the string is printed to the scren.  
+- Again, the **indentation** in the lines underneath the IF statement matters.
+
+There are variants of this IF statement that allows us to say "if some value is `True`, do something. Otherwise, do something else."  This is called an IF/ELSE statement:
+
+```
+x = 4
+y = 10
+if x < y:
+   print('x is less than y')
+else:
+   print('x is greater than y')
+```
+
+Here, only one of the two print statements will be executed, depending on whether the Boolean expression evaluates to `True` or `False` (and enters the `else` block of code).  
+
+Finally, there is an ELIF statement, which allows us to say "if some value is `True`, do something. Otherwise...if some _other_ value is `True`, do something. Otherwise...if some _other_ value is `True`, do something.
+
+```
+x = 4
+y = 10
+if x < y:
+   print('x is less than y')
+elif x == y:
+   print('x and y are equal')
+else:
+   print('x is greater than y')
+```
+
+Note that, while there are now three different print statements, only **one** will ever be printed because only one of the IF/ELIF/ELSE conditions can evaluate to `True`.
