@@ -244,3 +244,8 @@ We are now about to return the value from `prog2`. Note that there are three tab
 </p>
 
 At the end of the `main` function, there are two variables within the function (we call these **local variables** to differentiate them from the variables and functions in the global frame).  These variables, `x` and `y`, are the only integers that we can refer to within `main`.  
+
+### The Boolean Data Type and Boolean Expressions
+
+A **boolean** is a data type that can only be one of two values: `True` or `False`.  Booleans can appear as outputs or inputs of some expressions (including some new operators): (ended here)
+
