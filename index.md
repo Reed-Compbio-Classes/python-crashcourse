@@ -367,7 +367,7 @@ When you read a book, you need to **open** the book, **read** the text, and **cl
 | --- | --- | --- | --- | --- |
 | Open a `File`  | `open()`  | two `str` | `File` | `open('myfile.txt','r')` <br> `open('myfile.txt','w')` |
 | Read contents | `read()`  | zero | `str` | `myFile.read()` |
-| Read contents as lines | `readlines()` | zero | a `list` of strings | `myFile.readlines()`  | 
+| Read contents <br> as lines | `readlines()` | zero | a `list` of strings | `myFile.readlines()`  | 
 | Close a `File` | `close()` | zero | nothing | `myFile.close()` |
 
 Here is an example:
@@ -391,7 +391,7 @@ When you read in a file, you may want to process the strings in some way.  Lucki
 
 | Description  | Name | Num of Arguments | Returns | Examples |
 | --- | --- | --- | --- | --- |
-| Remove whitespace | `strip()`  | zero | `str` | `' abcd   '.strip()` <br> `'abcd\n'.strip()` <br> `myStr.strip()` |
+| Remove <br> whitespace | `strip()`  | zero | `str` | `' abcd   '.strip()` <br> `'abcd\n'.strip()` <br> `myStr.strip()` |
 | Split a string on whitespace | `split()`  | zero | `list` of strings | `'my string'.split()` |
 | Split a string using <br> a delimiter | `split()` | one `str` | `list` of strings | `'bacad'.split('a')` <br> `myStr.split('-')` <br> `'a\nb\nc\nd\n'.split('\n')` |
 | Concatenate a list | `join()` | zero | `str` | `['a','b','c'].join()`  | 
@@ -411,7 +411,7 @@ myList = myStr.split()
 Using what we've learned about so far, it would be straightforward to count the number of times the word `that` appears, but what about counting _all_ occurrences of _all_ words?  
 
 Luckily there's a new type called a **dictionary** that will allow us to complete this task.  A dictionary stores key-value pairs, where the values can be quickly retrieved by keys.
-- Keys can be `str`, `int`, `float`, or a mix of types
+- Keys can be `str`, `int`, `float`, or a mix of types (e.g. some keys can be `str` and others can be `int`)
 - Values can be `str`, `int`, `float`, `list`, `Boolean`, `File` (almost anything)
 
 A dictionary is specified by curly braces `{}`. Like initializing an empty list with `[]` you can initialize an empty dictionary:
@@ -432,7 +432,7 @@ In this example, the keys are `str` and the values are `int`. You can retrieve a
 
 ```
 freq['like']
-sam_val = freq['sam']  # assign the value of 'sam' to the sam_val variable
+sam_val = freq['sam']  # assign the value of 'sam' to sam_val
 ```
 
 You can also assign a new value to a key:
