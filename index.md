@@ -311,7 +311,7 @@ Note that, while there are now three different print statements, only **one** wi
 
 ## Week 7
 
-### Working with Tables as Lists of Strings and Lists of Lists
+### Working with Tables
 
 When we began to work with motifs, we represented them as a **list of strings**.  It is often useful to consider them as a table, where each string is a row and we can retrieve a character from a certain column.  This allows us to do things like count the number of `A/C/G/T` in a column to build a counts table or a frequency table. 
 
@@ -350,3 +350,111 @@ for j in range(len(ListOfLists[0])):
 </p>
 
 Remember to **always** index into the variable with rows (`i`) and then columns (`j`).
+
+## Week 9
+
+### Files in Python
+
+For many homeworks, the `helper_functions.py` have included a function to read strings from a text file.  In HW 6.5, you will read text from a file _and_ write text to a file.  This may be very useful for final projects. 
+
+When you read a book, you need to **open** the book, **read** the text, and **close** the book.  Reading files in Python follows the same structure.  First, a `File` is a new type (like `int`, `str`, `list`...), but has some built-in functions that are designed to work _only_ with `File` variables.  
+- Filenames are represented as strings (e.g. `myfile.txt`)
+- You can open a file for **reading** (`r`, default) or **writing** (`w`).  If you're opening a file for reading, the file must already exist.  
+- You can read the contents of the file as a single string (`read()`) or as a list of strings, one for each line (`readlines()`).  These functions have a **special syntax**: they require a `File` object. 
+- When you are done, **close** the file with the `close()` function (which also has a special syntax).
+
+| Description  | Name | Num of Arguments | Returns | Examples |
+| --- | --- | --- | --- | --- |
+| Open a `File`  | `open()`  | two `str` | `File` | `open('myfile.txt','r')` <br> `open('myfile.txt','w')` |
+| Read contents | `read()`  | zero | `str` | `myFile.read()` |
+| Read contents as lines | `readlines()` | zero | a `list` of strings | `myFile.readlines()`  | 
+| Close a `File` | `close()` | zero | nothing | `myFile.close()` |
+
+Here is an example:
+
+```
+fname = 'mysteryFile.txt'
+myFile = open(fname,'r') # open for reading
+text = myFile.read() # save entire file in text variable
+myFile.close() # close the file
+print(text) # print the text
+```
+
+### Manipulating Strings
+
+When you read in a file, you may want to process the strings in some way.  Luckily, there are functions to easily strip whitespace and split a string into multiple parts.  Strings are types that also have this **special syntax** where functions can be called directly on them.
+- To remove any whitespace (including newlines, spaces, and tabs), use the `strip()` function.
+- To split a string into multiple parts, use the `split()` function. The `split()` function requires a **delimiter** - a string that will be used to split the string on.  With no arguments, `split()` will use whitespace as a delimiter.  However, you can pass in _any_ string as a delimiter. 
+- Conversely, you can take a list of strings and concatenate them with a delimiter using the `join()` function. 
+- Finally, you can also convert all letters to upper-case with `upper()` and all letters to lower-case with `lower()`.  
+
+
+| Description  | Name | Num of Arguments | Returns | Examples |
+| --- | --- | --- | --- | --- |
+| Remove whitespace | `strip()`  | zero | `str` | `' abcd   '.strip()` <br> `'abcd\n'.strip()` <br> `myStr.strip()` |
+| Split a string on whitespace | `split()`  | zero | `list` of strings | `'my string'.split()` |
+| Split a string using <br> a delimiter | `split()` | one `str` | `list` of strings | `'bacad'.split('a')` <br> `myStr.split('-')` <br> `'a\nb\nc\nd\n'.split('\n')` |
+| Concatenate a list | `join()` | zero | `str` | `['a','b','c'].join()`  | 
+| Concatenate a list <br> using a delimiter | `join()` | one `str` | `str` | `['b','c','d'].join('a')`  | 
+| Convert letters to uppercase | `upper()` | zero | `str` | `'abc'.upper()` |
+| Convert letters to lowercase | `lower()` | zero | `str` | `'ABC'.lower()` |
+
+### Dictionaries
+
+Suppose we have a string from a file and we want to count the number of times each word appears:
+
+```
+myStr = 'that sam I am that sam I am I do not like that sam I am'
+myList = myStr.split()
+```
+
+Using what we've learned about so far, it would be straightforward to count the number of times the word `that` appears, but what about counting _all_ occurrences of _all_ words?  
+
+Luckily there's a new type called a **dictionary** that will allow us to complete this task.  A dictionary stores key-value pairs, where the values can be quickly retrieved by keys.
+- Keys can be `str`, `int`, `float`, or a mix of types
+- Values can be `str`, `int`, `float`, `list`, `Boolean`, `File` (almost anything)
+
+A dictionary is specified by curly braces `{}`. Like initializing an empty list with `[]` you can initialize an empty dictionary:
+
+```
+freq = {}
+```
+
+You can then add key-value pairs to this dictionary like so:
+
+```
+freq['that'] = 3
+freq['sam'] = 3
+freq['like'] = 1
+```
+
+In this example, the keys are `str` and the values are `int`. You can retrieve a value using the key (this will be an **expression**):
+
+```
+freq['like']
+sam_val = freq['sam']  # assign the value of 'sam' to the sam_val variable
+```
+
+You can also assign a new value to a key:
+
+```
+freq['sam'] = 100
+freq['that'] = freq['that'] + 1
+```
+
+Dictionaries also provide some built-in functions to get an iterator of the keys or the values for a dictionary.  You need to explicitly tell Python that these are lists if you want to work with them.
+
+```
+for key in freq.keys():
+  print(key)
+
+key_list = list(freq.keys())
+value_list = list(freq.values())
+```
+
+Note if you have the key you can always retrieve the value using `freq[key]`.  
+
+| Description  | Name | Num of Arguments | Returns | Examples |
+| --- | --- | --- | --- | --- |
+| Get the keys in a dictionary | `keys()`  | zero | `PyListObject` (use `list()` <br> to convert to a list) | `freq.keys()` |
+| Get the values in a dictionary | `values()`  | zero | `PyListObject` (use `list()` <br> to convert to a list) | `freq.values()` |
