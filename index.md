@@ -458,3 +458,11 @@ Note if you have the key you can always retrieve the value using `freq[key]`.
 | --- | --- | --- | --- | --- |
 | Get the keys in a dictionary | `keys()`  | zero | `PyListObject` (use `list()` <br> to convert to a list) | `freq.keys()` |
 | Get the values in a dictionary | `values()`  | zero | `PyListObject` (use `list()` <br> to convert to a list) | `freq.values()` |
+
+## Weeks 9-10
+
+### Graphs
+
+### `networkx`
+
+TBD
