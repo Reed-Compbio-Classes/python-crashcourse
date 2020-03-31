@@ -1,4 +1,4 @@
-We use [repl.it](https://repl.it/) for assignments in this course.  There are three panels for any lab or assignment.
+000002We use [repl.it](https://repl.it/) for assignments in this course.  There are three panels for any lab or assignment.
 * The right pane includes instructions
 * The upper left pane is a text editor (you can write multiple lines of code and evaluate them all using the run button).
 * The lower left pane is an interpreter, which takes user input and evaluates each line as you enter it.  Python interpreters have a prompt that begins with `>`.  
@@ -359,15 +359,15 @@ For many homeworks, the `helper_functions.py` have included a function to read s
 
 When you read a book, you need to **open** the book, **read** the text, and **close** the book.  Reading files in Python follows the same structure.  First, a `File` is a new type (like `int`, `str`, `list`...), but has some built-in functions that are designed to work _only_ with `File` variables.  
 - Filenames are represented as strings (e.g. `myfile.txt`)
-- You can open a file for **reading** (`r`, default) or **writing** (`w`).  If you're opening a file for reading, the file must already exist.  
-- You can read the contents of the file as a single string (`read()`) or as a list of strings, one for each line (`readlines()`).  These functions have a **special syntax**: they require a `File` object. 
-- When you are done, **close** the file with the `close()` function (which also has a special syntax).
+- You can open a file for **reading** (`r`, default) or **writing** (`w`).  If you're opening a file for reading, the file must already exist.  You can read the contents of the file as a single string (`read()`) or as a list of strings, one for each line (`readlines()`).  These functions have a **special syntax**: they require a `File` object. 
+- When you are done with either reading or writing, **close** the file with the `close()` function (which also has a special syntax).
 
 | Description  | Name | Num of Arguments | Returns | Examples |
 | --- | --- | --- | --- | --- |
 | Open a `File`  | `open()`  | two `str` | `File` | `open('myfile.txt','r')` <br> `open('myfile.txt','w')` |
 | Read contents | `read()`  | zero | `str` | `myFile.read()` |
 | Read contents <br> as lines | `readlines()` | zero | a `list` of strings | `myFile.readlines()`  | 
+| Write to a `File` | `write()` | one `str` | nothing | `myFile.write('Hi\n')` | 
 | Close a `File` | `close()` | zero | nothing | `myFile.close()` |
 
 Here is an example:
@@ -386,6 +386,7 @@ When you read in a file, you may want to process the strings in some way.  Lucki
 - To remove any whitespace (including newlines, spaces, and tabs), use the `strip()` function.
 - To split a string into multiple parts, use the `split()` function. The `split()` function requires a **delimiter** - a string that will be used to split the string on.  With no arguments, `split()` will use whitespace as a delimiter.  However, you can pass in _any_ string as a delimiter. 
 - Conversely, you can take a list of strings and concatenate them with a delimiter using the `join()` function. 
+- YOu can also replace some text in a string (a _substring_) with another substring with the `replace()` function. The function takes two arguments, and all instances of the first argument are replaced by the second argument.
 - Finally, you can also convert all letters to upper-case with `upper()` and all letters to lower-case with `lower()`.  
 
 
@@ -396,6 +397,7 @@ When you read in a file, you may want to process the strings in some way.  Lucki
 | Split a string using <br> a delimiter | `split()` | one `str` | `list` of strings | `'bacad'.split('a')` <br> `myStr.split('-')` <br> `'a\nb\nc\nd\n'.split('\n')` |
 | Concatenate a list | `join()` | zero | `str` | `['a','b','c'].join()`  | 
 | Concatenate a list <br> using a delimiter | `join()` | one `str` | `str` | `['b','c','d'].join('a')`  | 
+| Replace text in a string | `replace()` | two `str` | `str` | `'new*str'.replace('*',' ')`  | 
 | Convert letters to uppercase | `upper()` | zero | `str` | `'abc'.upper()` |
 | Convert letters to lowercase | `lower()` | zero | `str` | `'ABC'.lower()` |
 
@@ -462,6 +464,24 @@ Note if you have the key you can always retrieve the value using `freq[key]`.
 ## Weeks 9-10
 
 ### Graphs
+
+A _graph_ represents a set of **objects** and **pairwise connections** between them. In the example below, there are five objects (called **nodes**, here labled a,b,c,d,e) and six directed connections (called **directed edges**).  
+
+<p align="center">
+  <img src="graph-example.png" alt="graph example"/>
+</p>
+
+Graphs are mathematical objects, and there are many relationships that can be captured by graphs. For example, in a Twitter network, the nodes may be people and directed edges may indicate who follows whom (image from a [nice introduction to graph theory](https://medium.com/basecs/a-gentle-introduction-to-graph-theory-77969829ead8)): 
+
+![Twitter network](https://miro.medium.com/max/1400/1*urJTrfWn8aZdhb9A-HXZVg.jpeg)
+
+In this class, we will describe a graph as a list of nodes and a list of edges.  
+- The list of nodes will be a list of strings (e.g., `['a','b','c','d','e']` in the example above)
+- Each directed edge will be a list with **two** strings (e.g., `['a','b']` denotes that an edge starts at a and ends at b).  The list of nodes will be a list of these two-element lists (so it's a **list of lists**).  In the example above, the edge list will be:
+```
+[['a','b'],['c','e'],['b','d'],['a','d'],['c','b'],['e','d']]
+```
+
 
 ### `networkx`
 
