@@ -471,7 +471,7 @@ A _graph_ represents a set of **objects** and **pairwise connections** between t
   <img src="graph-example.png" alt="graph example"/>
 </p>
 
-Graphs are mathematical objects, and there are many relationships that can be captured by graphs. For example, in a Twitter network, the nodes may be people and directed edges may indicate who follows whom (image from a [nice introduction to graph theory](https://medium.com/basecs/a-gentle-introduction-to-graph-theory-77969829ead8)): 
+Graphs are mathematical objects, and there are many relationships that can be captured by graphs. For example, in a Twitter network, the nodes may be people and directed edges may indicate who follows whom (image from a [nice introduction to graph theory](https://medium.com/basecs/a-gentle-introduction-to-graph-theory-77969829ead8)).  In this example, the post's author Vaidehi follows Beyonc\`{e} but Beyonc\`{e} doesn't follow her back.
 
 ![Twitter network](https://miro.medium.com/max/1400/1*urJTrfWn8aZdhb9A-HXZVg.jpeg)
 
