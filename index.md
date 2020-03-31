@@ -527,7 +527,7 @@ plt.clf()
 
 There are many ways to customize the `draw()` function with additional optional arguments; [see this page for a full list of options](https://networkx.github.io/documentation/stable/reference/generated/networkx.drawing.nx_pylab.draw_networkx.html#networkx.drawing.nx_pylab.draw_networkx).  Note that all optional arguments have a **default value** in case that argument is not specified.  
 
-The `pos` optional argument specifies the way the nodes are positioned on the page.  There are functions that compute node positions in different ways, resulting in very different drawn graphs.  The [full list available online](https://networkx.github.io/documentation/stable/reference/drawing.html#module-networkx.drawing.layout), and the `nx.spring_layout(G)` is the default layout algorithm when the `pos` argument is not specified.These functions can be called as an optional argument within the `draw()` function like so:
+The `pos` optional argument specifies the way the nodes are positioned on the page.  There are functions that compute node positions in different ways, resulting in very different drawn graphs.  The [full list of layouts is available online](https://networkx.github.io/documentation/stable/reference/drawing.html#module-networkx.drawing.layout), and the `nx.spring_layout(G)` is the default layout algorithm when the `pos` argument is not specified.These functions can be called as an optional argument within the `draw()` function like so:
 ```
 nx.draw(G, pos=nx.spring_layout(G), with_labels=True)
 nx.draw(G, pos=nx.random_layout(G), with_labels=False)
