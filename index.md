@@ -1,4 +1,4 @@
-000002We use [repl.it](https://repl.it/) for assignments in this course.  There are three panels for any lab or assignment.
+We use [repl.it](https://repl.it/) for assignments in this course.  There are three panels for any lab or assignment.
 * The right pane includes instructions
 * The upper left pane is a text editor (you can write multiple lines of code and evaluate them all using the run button).
 * The lower left pane is an interpreter, which takes user input and evaluates each line as you enter it.  Python interpreters have a prompt that begins with `>`.  
@@ -465,7 +465,7 @@ Note if you have the key you can always retrieve the value using `freq[key]`.
 
 ### Graphs
 
-A _graph_ represents a set of **objects** and **pairwise connections** between them. In the example below, there are five objects (called **nodes**, here labled a,b,c,d,e) and six directed connections (called **directed edges**).  
+A graph represents a set of **objects** and **pairwise connections** between them. In the example below, there are five objects (called **nodes**, here labled a,b,c,d,e) and six directed connections (called **directed edges**).  
 
 <p align="center">
   <img src="graph-example.png" alt="graph example"/>
@@ -476,13 +476,59 @@ Graphs are mathematical objects, and there are many relationships that can be ca
 ![Twitter network](https://miro.medium.com/max/1400/1*urJTrfWn8aZdhb9A-HXZVg.jpeg)
 
 In this class, we will describe a graph as a list of nodes and a list of edges.  
-- The list of nodes will be a list of strings (e.g., `['a','b','c','d','e']` in the example above)
-- Each directed edge will be a list with **two** strings (e.g., `['a','b']` denotes that an edge starts at a and ends at b).  The list of nodes will be a list of these two-element lists (so it's a **list of lists**).  In the example above, the edge list will be:
+
+1. The list of nodes will be a list of strings.   In the example above, the node list is
+```
+['a','b','c','d','e']
+```
+
+2. Each directed edge will be a list with **two** strings (e.g., `['a','b']` denotes that an edge starts at `a` and ends at `b`).  The list of edges will be a list of these two-element lists (so it's a **list of lists**).  In the example above, the edge list is
 ```
 [['a','b'],['c','e'],['b','d'],['a','d'],['c','b'],['e','d']]
 ```
 
+### NetworkX
 
-### `networkx`
+We have already seen [built-in functions](#built-in-functions) such as `type()` and `print()`, and we've seen how to work with functions imported from another file (e.g. `helper_functions.py`).  The Python community has developed substantial modules that we can use, allowing us to work with new objects and call functions that they have written.  The [`networkx`](https://networkx.github.io/documentation/stable/index.html) module is a Python library for working with graphs. The following import statement imports this module and nicknames it `nx` so we can refer to it that way:
 
-TBD
+```
+import networkx as nx
+```
+
+The lab and homework assignmentswill walk through how to make a graph and add nodes and edges. For more information beyond this crashcourse [see this tutorial for undirected graphs](https://networkx.github.io/documentation/stable/tutorial.html) (which uses `nx.Graph()` instead of `nx.DiGraph()` or `nx.MultiDiGraph()`).
+
+Suppose we have a `nodes` variable and an `edges` variable as described above.  We can create a `networkx` graph with the following code:
+```
+G = nx.DiGraph()
+G.add_nodes_from(nodes)
+G.add_edges_from(edges)
+```
+The variable `G` represents a `networkx` object.  There are a number of functions that work directly on these graphs - see the [DiGraph Methods List](https://networkx.github.io/documentation/stable/reference/classes/digraph.html) for all possibilities.
+
+| Function Name  | Description |
+| --- | --- |
+| `G.add_node(n)` | [Add node `n` to `G`](https://networkx.github.io/documentation/stable/reference/classes/generated/networkx.DiGraph.add_node.html#networkx.DiGraph.add_node) |
+| `G.has_node(n)` | [Checks if `n` is in `G`](https://networkx.github.io/documentation/stable/reference/classes/generated/networkx.DiGraph.has_node.html#networkx.DiGraph.has_node) | 
+| `G.number_of_nodes()` | [Returns the number of nodes in `G`](https://networkx.github.io/documentation/stable/reference/classes/generated/networkx.DiGraph.number_of_nodes.html#networkx.DiGraph.number_of_nodes) |
+| `G.add_edge(u,v)` | [Add edge `[u,v]` to `G`](https://networkx.github.io/documentation/stable/reference/classes/generated/networkx.DiGraph.add_edge.html#networkx.DiGraph.add_edge) | 
+| `G.has_edge(u,v)` | [Checks if `[u,v]` is in `G`](https://networkx.github.io/documentation/stable/reference/classes/generated/networkx.DiGraph.has_edge.html#networkx.DiGraph.has_edge) |
+| `G.number_of_edges()` | [Returns the number of edges in `G`](https://networkx.github.io/documentation/stable/reference/classes/generated/networkx.DiGraph.number_of_edges.html#networkx.DiGraph.number_of_edges) |
+| `G.neighbors(n)` | [Returns the neighbors of `n` in `G`](https://networkx.github.io/documentation/stable/reference/classes/generated/networkx.DiGraph.neighbors.html#networkx.DiGraph.neighbors) |
+
+We can visualize a `networkx` graph by drawing it to an output file with the `draw()` function. The syntax for drawing a graph is 
+```
+nx.draw(G, with_labels=True)
+```
+where `with_labels=True` is an optional argument (if this is `True` then the labels are displayed on the nodes).  We then need to save the file (like we did when making plots or bar graphs with `matlplotlib`).  We'll also "clear" the plot in order to draw new things.
+```
+plt.savefig('graph.png')
+plt.clf()
+```
+
+There are many ways to customize the `draw()` function with additional optional arguments; [see this page for a full list of options)[https://networkx.github.io/documentation/stable/reference/generated/networkx.drawing.nx_pylab.draw_networkx.html#networkx.drawing.nx_pylab.draw_networkx).  Note that all optional arguments have a **default value** in case that argument is not specified.  
+
+The `pos` optional argument specifies the way the nodes are positioned on the page.  There are functions that compute node positions in different ways, resulting in very different drawn graphs.  The [full list available online](https://networkx.github.io/documentation/stable/reference/drawing.html#module-networkx.drawing.layout), and the `nx.spring_layout(G)` is the default layout algorithm when the `pos` argument is not specified.These functions can be called as an optional argument within the `draw()` function like so:
+```
+nx.draw(G, pos=nx.spring_layout(G), with_labels=True)
+nx.draw(G, pos=nx.random_layout(G), with_labels=False)
+```
