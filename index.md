@@ -505,7 +505,7 @@ G.add_edges_from(edges)
 ```
 The variable `G` represents a `networkx` object.  There are a number of functions that work directly on these graphs - see the [DiGraph Methods List](https://networkx.github.io/documentation/stable/reference/classes/digraph.html) for all possibilities.
 
-| Function Name  | Description |
+| Function Name  | Description (click for more information) |
 | --- | --- |
 | `G.add_node(n)` | [Add node `n` to `G`](https://networkx.github.io/documentation/stable/reference/classes/generated/networkx.DiGraph.add_node.html#networkx.DiGraph.add_node) |
 | `G.has_node(n)` | [Checks if `n` is in `G`](https://networkx.github.io/documentation/stable/reference/classes/generated/networkx.DiGraph.has_node.html#networkx.DiGraph.has_node) | 
@@ -525,7 +525,7 @@ plt.savefig('graph.png')
 plt.clf()
 ```
 
-There are many ways to customize the `draw()` function with additional optional arguments; [see this page for a full list of options)[https://networkx.github.io/documentation/stable/reference/generated/networkx.drawing.nx_pylab.draw_networkx.html#networkx.drawing.nx_pylab.draw_networkx).  Note that all optional arguments have a **default value** in case that argument is not specified.  
+There are many ways to customize the `draw()` function with additional optional arguments; [see this page for a full list of options](https://networkx.github.io/documentation/stable/reference/generated/networkx.drawing.nx_pylab.draw_networkx.html#networkx.drawing.nx_pylab.draw_networkx).  Note that all optional arguments have a **default value** in case that argument is not specified.  
 
 The `pos` optional argument specifies the way the nodes are positioned on the page.  There are functions that compute node positions in different ways, resulting in very different drawn graphs.  The [full list available online](https://networkx.github.io/documentation/stable/reference/drawing.html#module-networkx.drawing.layout), and the `nx.spring_layout(G)` is the default layout algorithm when the `pos` argument is not specified.These functions can be called as an optional argument within the `draw()` function like so:
 ```
