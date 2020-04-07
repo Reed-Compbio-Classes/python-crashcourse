@@ -489,7 +489,11 @@ In this class, we will describe a graph as a list of nodes and a list of edges.
 
 ### NetworkX
 
-We have already seen [built-in functions](#built-in-functions) such as `type()` and `print()`, and we've seen how to work with functions imported from another file (e.g. `helper_functions.py`).  The Python community has developed substantial modules that we can use, allowing us to work with new objects and call functions that they have written.  The [`networkx`](https://networkx.github.io/documentation/stable/index.html) module is a Python library for working with graphs. The following import statement imports this module and nicknames it `nx` so we can refer to it that way:
+We have already seen [built-in functions](#built-in-functions) such as `type()` and `print()`, and we've seen how to work with functions imported from another file (e.g. `helper_functions.py`).  The Python community has developed substantial modules that we can use, allowing us to work with new objects and call functions that they have written.  The [`networkx`](https://networkx.github.io/documentation/stable/index.html) module is a Python library for working with graphs. 
+
+#### Creating a Graph
+
+The following import statement imports this module and nicknames it `nx` so we can refer to it that way:
 
 ```
 import networkx as nx
@@ -515,6 +519,8 @@ The variable `G` represents a `networkx` object.  There are a number of function
 | `G.number_of_edges()` | [Returns the number of edges in `G`](https://networkx.github.io/documentation/stable/reference/classes/generated/networkx.DiGraph.number_of_edges.html#networkx.DiGraph.number_of_edges) |
 | `G.neighbors(n)` | [Returns the neighbors of `n` in `G`](https://networkx.github.io/documentation/stable/reference/classes/generated/networkx.DiGraph.neighbors.html#networkx.DiGraph.neighbors) |
 
+#### Drawing a Graph
+
 We can visualize a `networkx` graph by drawing it to an output file with the `draw()` function. The syntax for drawing a graph is 
 ```
 nx.draw(G, with_labels=True)
@@ -532,3 +538,54 @@ The `pos` optional argument specifies the way the nodes are positioned on the pa
 nx.draw(G, pos=nx.spring_layout(G), with_labels=True)
 nx.draw(G, pos=nx.random_layout(G), with_labels=False)
 ```
+
+#### Finding Paths and Cycles
+
+TODO fill in here.
+
+### While Loops
+
+A **while loop** specifies repeated execution. However, unlike FOR loops, a WHILE loop keeps iteration until a condition is not met.  The syntax for a WHILE loop looks like this:
+
+```
+i = 0
+while i < 5:
+  print(i)
+  i = i + 1
+```
+
+Let's break down the previous lines.
+- The `while` and the colon (`:`) are part of every WHILE loop.
+- There is a Boolean expression between the `while` and the colon (remember that this evaluates to `True` or `False`).
+- The **indentation** of the last two lines matter - all lines that are indented under the `while` statement are executed until the Boolean expression evaluates to `False`.
+
+The WHILE loop above will print
+
+```
+0
+1
+2
+3
+4
+```
+
+**Warning**: you must ensure that the WHILE loop terminates! That is, there **must** be some point in your code where the Boolean expression evaluates to `False`.  Consider this code:
+
+```
+i = 0
+while i < 5:
+  print(i)
+```
+
+Here, we are not incrementing `i` by one each time.  So the WHILE loop will print
+
+```
+0
+0
+0
+0
+0
+...
+```
+
+and so on forever.  This is called an **infinite loop**, and they are no good. 
