@@ -551,7 +551,7 @@ import networkx as nx
 
 | Function Name  | Description (click for more information) |
 | --- | --- |
-| `G.find_cycle(G,orientation='original')` | [Find a cycle in `G`](https://networkx.github.io/documentation/stable/reference/algorithms/generated/networkx.algorithms.cycles.find_cycle.html) (use `orientation='original'`) |
+| `nx.find_cycle(G,orientation='original')` | [Find a cycle in `G`](https://networkx.github.io/documentation/stable/reference/algorithms/generated/networkx.algorithms.cycles.find_cycle.html) (use `orientation='original'`) |
 | `nx.has_eulerian_path(G)` | [Checks if `G` has an Elerian path](https://networkx.github.io/documentation/stable/reference/algorithms/generated/networkx.algorithms.euler.has_eulerian_path.html) |
 | `nx.eulerian_path(G)` | [Return an Eulerian path](https://networkx.github.io/documentation/stable/reference/algorithms/generated/networkx.algorithms.euler.eulerian_path.html) (use `list()` to convert to a list) |
 | `nx.is_eulerian(G)` | [Checks if `G` has an Elerian circuit (cycle)](https://networkx.github.io/documentation/stable/reference/algorithms/generated/networkx.algorithms.euler.is_eulerian.html#networkx.algorithms.euler.is_eulerian) |
