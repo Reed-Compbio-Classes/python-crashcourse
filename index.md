@@ -1,7 +1,7 @@
-We use [repl.it](https://repl.it/) for assignments in this course.  There are three panels for any lab or assignment.
-* The right pane includes instructions
-* The upper left pane is a text editor (you can write multiple lines of code and evaluate them all using the run button).
-* The lower left pane is an interpreter, which takes user input and evaluates each line as you enter it.  Python interpreters have a prompt that begins with `>`.  
+We use [repl.it](https://repl.it/) Teams for assignments in this course.  Every lab or assignment has the following things:
+* A `README.md` file which provides instructions. Click the "Preview" toggle in the upper-right of the text file for nicely-formatted instructions.
+* One or more files ending in `.py`, including a `main.py` file. You can write multiple lines of code and evaluate them all using the run button.
+* The Python console on the right-hand pane, which takes user input and evaluates each line as you enter it.  The Python console has a prompt that begins with `>`.  
 
 ### PythonTutor
 
