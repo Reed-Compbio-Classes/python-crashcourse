@@ -42,7 +42,7 @@ newVar = X + Y
 
 There are two types of numbers we will work with:
 * An **integer** (`int`) is a data type that represents a number with no fractional component (a whole number).
-* A **floating point real value** (`float`) is a data type that represents a number with fractional values. 
+* A **floating point real value** (`float`) is a data type that represents a number with fractional values.
 
 You can check the type of a values with the `type()` function:
 
@@ -105,7 +105,7 @@ A **function** is an executable block of code.  Each function has a name followe
 | --- | --- | --- | --- | --- |
 | Get the type of an object  | `type()`  | one | the object's type | `type(1.0)` <br> `type('a string')` |
 | Print the arguments to the screen | `print()`  | zero or more | nothing | `print()` <br> `print(145.99)` <br> `print('a',1,'b')` |
-| Get the length of a list | `len()` | one `list` or `str` | an `int` | `len([1,2,3,4,5])` | 
+| Get the length of a list | `len()` | one `list` or `str` | an `int` | `len([1,2,3,4,5])` |
 | Get a range of integers | `range()` | one `int` | a `range` object from 0 up to _but not including_ the argument | `range(10)` <br> `range(5)` |
 | Convert to a list | `list()` | one | a `list` of the argument | `list(range(5))` |
 | Convert to a string | `str()` | one | a `str` of the argument | `str(5)` <br> `str([1,2])` |
@@ -142,7 +142,7 @@ item = 0
 print(item)
 item = 1
 print(item)
-item = 2 
+item = 2
 print(item)
 item = 3
 print(item)
@@ -212,12 +212,12 @@ def prog1(num):
 
 def prog2(num):
   return num+5
-  
+
 main()
 ```
-The `prog1` and `prog2` functions take inputs, or **arguments**.  In these function definitions, the variable name (e.g. `num`) is a **formal parameter** that is assigned the value of the input when the function is called. 
+The `prog1` and `prog2` functions take inputs, or **arguments**.  In these function definitions, the variable name (e.g. `num`) is a **formal parameter** that is assigned the value of the input when the function is called.
 
-The **scope** of a variable is the part of the program where it may be referenced.  Formal parameters (in the function defintions) and other variables assigned within a function only be used within that function.  Functions can communicate information back to the place where it is called by returning values.  Let's walk through the code above as an example.  The first thing Python will do is store these function definitons in memory, skipping over all the contents. 
+The **scope** of a variable is the part of the program where it may be referenced.  Formal parameters (in the function defintions) and other variables assigned within a function only be used within that function.  Functions can communicate information back to the place where it is called by returning values.  Let's walk through the code above as an example.  The first thing Python will do is store these function definitons in memory, skipping over all the contents.
 
 <p align="center">
   <img src="scope-1.png" alt="scope-1"/>
@@ -252,7 +252,7 @@ A **boolean** is a data type that can only be one of two values: `True` or `Fals
 | Operator  | Symbol | Input Types | Return Types | Examples |
 | --- | --- | --- | --- | --- |
 Equality | `==` | numeric or `str` | `boolean` | `1==2` <br> `'a'=='a'` |
-Inequality | `!=` | numeric or `str` | `boolean` | `1!=2` <br> `'a'!='a'` | 
+Inequality | `!=` | numeric or `str` | `boolean` | `1!=2` <br> `'a'!='a'` |
 Less Than  | `<` | numeric | `boolean` | `1<2`<br> `2.0<1.5` |
 Less Than<br>or Equal To | `<=`  | numeric | `boolean` | `1<=1`<br> `2.0<=1.5` |
 Greater Than | `>`  | numeric | `boolean` | `1>2`<br> `2.0>1.5` |
@@ -274,7 +274,7 @@ if x < y:
 ```
 Let's break down the previous lines:
 - The first two lines assign integers to variables `x` and `y`.
-- The `if` and the colon (`:`) are part of every IF statement. 
+- The `if` and the colon (`:`) are part of every IF statement.
 - There is a Boolean expression (`x < y`), which will evaluate to `True` or `False`.  
  - If the expression evaluates to `True`, then the indented line will be executed.
  - If the expression evaluates to `False`, then the indented line will _not_ be executed.
@@ -313,7 +313,7 @@ Note that, while there are now three different print statements, only **one** wi
 
 ### Working with Tables
 
-When we began to work with motifs, we represented them as a **list of strings**.  It is often useful to consider them as a table, where each string is a row and we can retrieve a character from a certain column.  This allows us to do things like count the number of `A/C/G/T` in a column to build a counts table or a frequency table. 
+When we began to work with motifs, we represented them as a **list of strings**.  It is often useful to consider them as a table, where each string is a row and we can retrieve a character from a certain column.  This allows us to do things like count the number of `A/C/G/T` in a column to build a counts table or a frequency table.
 
 <p align="center">
   <img src="list-of-strings.png" alt="lists-of-strings"/>
@@ -355,37 +355,47 @@ Remember to **always** index into the variable with rows (`i`) and then columns 
 
 ### Files in Python
 
-For many homeworks, the `helper_functions.py` have included a function to read strings from a text file.  In HW 6.5, you will read text from a file _and_ write text to a file.  This may be very useful for final projects. 
+For many homeworks, the `helper_functions.py` have included a function to read strings from a text file.  In HW 6.5, you will read text from a file _and_ write text to a file.  This may be very useful for final projects.
 
 When you read a book, you need to **open** the book, **read** the text, and **close** the book.  Reading files in Python follows the same structure.  First, a `File` is a new type (like `int`, `str`, `list`...), but has some built-in functions that are designed to work _only_ with `File` variables.  
 - Filenames are represented as strings (e.g. `myfile.txt`)
-- You can open a file for **reading** (`r`, default) or **writing** (`w`).  If you're opening a file for reading, the file must already exist.  You can read the contents of the file as a single string (`read()`) or as a list of strings, one for each line (`readlines()`).  These functions have a **special syntax**: they require a `File` object. 
+- You can open a file for **reading** (`r`, default) or **writing** (`w`).  If you're opening a file for reading, the file must already exist.  You can read the contents of the file as a single string (`read()`) or as a list of strings, one for each line (`readlines()`).  These functions have a **special syntax**: they require a `File` object.
 - When you are done with either reading or writing, **close** the file with the `close()` function (which also has a special syntax).
 
 | Description  | Name | Num of Arguments | Returns | Examples |
 | --- | --- | --- | --- | --- |
 | Open a `File`  | `open()`  | two `str` | `File` | `open('myfile.txt','r')` <br> `open('myfile.txt','w')` |
 | Read contents | `read()`  | zero | `str` | `myFile.read()` |
-| Read contents <br> as lines | `readlines()` | zero | a `list` of strings | `myFile.readlines()`  | 
-| Write to a `File` | `write()` | one `str` | nothing | `myFile.write('Hi\n')` | 
+| Read contents <br> as lines | `readlines()` | zero | a `list` of strings | `myFile.readlines()`  |
+| Write to a `File` | `write()` | one `str` | nothing | `myFile.write('Hi\n')` |
 | Close a `File` | `close()` | zero | nothing | `myFile.close()` |
 
-Here is an example:
+Here is an example to read from a file:
 
 ```
 fname = 'mysteryFile.txt'
-myFile = open(fname,'r') # open for reading
+myFile = open(fname,'r') # open for reading (file must exist)
 text = myFile.read() # save entire file in text variable
 myFile.close() # close the file
 print(text) # print the text
+```
+
+Here is an example to write to a file:
+
+```
+fname = 'notamysteryFile.txt'
+myFile = open(fname,'w') # open for writing (file can be new)
+myFile.write('this is the first line\n') # write a string (remember the newline!)
+myFile.write('...and this is the second line.\n')
+myFile.close() # close the file
 ```
 
 ### Manipulating Strings
 
 When you read in a file, you may want to process the strings in some way.  Luckily, there are functions to easily strip whitespace and split a string into multiple parts.  Strings are types that also have this **special syntax** where functions can be called directly on them.
 - To remove any whitespace (including newlines, spaces, and tabs), use the `strip()` function.
-- To split a string into multiple parts, use the `split()` function. The `split()` function requires a **delimiter** - a string that will be used to split the string on.  With no arguments, `split()` will use whitespace as a delimiter.  However, you can pass in _any_ string as a delimiter. 
-- Conversely, you can take a list of strings and concatenate them with a delimiter using the `join()` function. 
+- To split a string into multiple parts, use the `split()` function. The `split()` function requires a **delimiter** - a string that will be used to split the string on.  With no arguments, `split()` will use whitespace as a delimiter.  However, you can pass in _any_ string as a delimiter.
+- Conversely, you can take a list of strings and concatenate them with a delimiter using the `join()` function.
 - YOu can also replace some text in a string (a _substring_) with another substring with the `replace()` function. The function takes two arguments, and all instances of the first argument are replaced by the second argument.
 - Finally, you can also convert all letters to upper-case with `upper()` and all letters to lower-case with `lower()`.  
 
@@ -395,9 +405,9 @@ When you read in a file, you may want to process the strings in some way.  Lucki
 | Remove <br> whitespace | `strip()`  | zero | `str` | `' abcd   '.strip()` <br> `'abcd\n'.strip()` <br> `myStr.strip()` |
 | Split a string on whitespace | `split()`  | zero | `list` of strings | `'my string'.split()` |
 | Split a string using <br> a delimiter | `split()` | one `str` | `list` of strings | `'bacad'.split('a')` <br> `myStr.split('-')` <br> `'a\nb\nc\nd\n'.split('\n')` |
-| Concatenate a list | `join()` | zero | `str` | `['a','b','c'].join()`  | 
-| Concatenate a list <br> using a delimiter | `join()` | one `str` | `str` | `['b','c','d'].join('a')`  | 
-| Replace text in a string | `replace()` | two `str` | `str` | `'new*str'.replace('*',' ')`  | 
+| Concatenate a list | `join()` | zero | `str` | `['a','b','c'].join()`  |
+| Concatenate a list <br> using a delimiter | `join()` | one `str` | `str` | `['b','c','d'].join('a')`  |
+| Replace text in a string | `replace()` | two `str` | `str` | `'new*str'.replace('*',' ')`  |
 | Convert letters to uppercase | `upper()` | zero | `str` | `'abc'.upper()` |
 | Convert letters to lowercase | `lower()` | zero | `str` | `'ABC'.lower()` |
 
@@ -489,7 +499,7 @@ In this class, we will describe a graph as a list of nodes and a list of edges.
 
 ### NetworkX
 
-We have already seen [built-in functions](#built-in-functions) such as `type()` and `print()`, and we've seen how to work with functions imported from another file (e.g. `helper_functions.py`).  The Python community has developed substantial modules that we can use, allowing us to work with new objects and call functions that they have written.  The [`networkx`](https://networkx.github.io/documentation/stable/index.html) module is a Python library for working with graphs. 
+We have already seen [built-in functions](#built-in-functions) such as `type()` and `print()`, and we've seen how to work with functions imported from another file (e.g. `helper_functions.py`).  The Python community has developed substantial modules that we can use, allowing us to work with new objects and call functions that they have written.  The [`networkx`](https://networkx.github.io/documentation/stable/index.html) module is a Python library for working with graphs.
 
 ### NetworkX: Creating a Graph
 
@@ -512,9 +522,9 @@ The variable `G` represents a `networkx` object.  There are a number of function
 | Function Name  | Description (click for more information) |
 | --- | --- |
 | `G.add_node(n)` | [Add node `n` to `G`](https://networkx.github.io/documentation/stable/reference/classes/generated/networkx.MultiDiGraph.add_node.html#networkx.MultiDiGraph.add_node) |
-| `G.has_node(n)` | [Checks if `n` is in `G`](https://networkx.github.io/documentation/stable/reference/classes/generated/networkx.MultiDiGraph.has_node.html#networkx.MultiDiGraph.has_node) | 
+| `G.has_node(n)` | [Checks if `n` is in `G`](https://networkx.github.io/documentation/stable/reference/classes/generated/networkx.MultiDiGraph.has_node.html#networkx.MultiDiGraph.has_node) |
 | `G.number_of_nodes()` | [Returns the number of nodes in `G`](https://networkx.github.io/documentation/stable/reference/classes/generated/networkx.MultiDiGraph.number_of_nodes.html#networkx.MultiDiGraph.number_of_nodes) |
-| `G.add_edge(u,v)` | [Add edge `[u,v]` to `G`](https://networkx.github.io/documentation/stable/reference/classes/generated/networkx.MultiDiGraph.add_edge.html#networkx.MultiDiGraph.add_edge) | 
+| `G.add_edge(u,v)` | [Add edge `[u,v]` to `G`](https://networkx.github.io/documentation/stable/reference/classes/generated/networkx.MultiDiGraph.add_edge.html#networkx.MultiDiGraph.add_edge) |
 | `G.has_edge(u,v)` | [Checks if `[u,v]` is in `G`](https://networkx.github.io/documentation/stable/reference/classes/generated/networkx.MultiDiGraph.has_edge.html#networkx.MultiDiGraph.has_edge) |
 | `G.number_of_edges()` | [Returns the number of edges in `G`](https://networkx.github.io/documentation/stable/reference/classes/generated/networkx.MultiDiGraph.number_of_edges.html#networkx.MultiDiGraph.number_of_edges) |
 | `G.neighbors(n)` | [Returns the neighbors of `n` in `G`](https://networkx.github.io/documentation/stable/reference/classes/generated/networkx.MultiDiGraph.neighbors.html#networkx.MultiDiGraph.neighbors) |
@@ -523,7 +533,7 @@ The variable `G` represents a `networkx` object.  There are a number of function
 
 ### NetworkX: Drawing a Graph
 
-We can visualize a `networkx` graph by drawing it to an output file with the `draw()` function. The syntax for drawing a graph is 
+We can visualize a `networkx` graph by drawing it to an output file with the `draw()` function. The syntax for drawing a graph is
 ```
 nx.draw(G, with_labels=True)
 ```
@@ -604,4 +614,4 @@ Here, we are not incrementing `i` by one each time.  So the WHILE loop will prin
 ...
 ```
 
-and so on forever.  This is called an **infinite loop**, and they are no good. 
+and so on forever.  This is called an **infinite loop**, and they are no good.
