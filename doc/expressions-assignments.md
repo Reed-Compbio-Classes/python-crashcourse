@@ -8,7 +8,7 @@ nav_order: 2
 
 Navigate to the terminal in VSCode, type `python`, and hit the return key. You have now opened the Python interpreter, where you can directly type python code at the prompt (`>>>`) and it will be evaluated. The Python interpreter can be used like a "Calculator" on your laptop.  When you click the equals sign on your calculator, nothing happens.  This is the same thing as hitting Enter in the Python interpreter.  
 
-![prompt]({{ "/figs/prompt.png" | relative_url }})
+![prompt](/figs/prompt.png)
 
 To exit out of this interpreter, type `quit()` and hit the return key. You will return to the original prompt in the terminal (that ends with `$`).
 

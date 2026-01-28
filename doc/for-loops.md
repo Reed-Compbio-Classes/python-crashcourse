@@ -84,9 +84,7 @@ for i in range(len(ListOfLists)):
     print(ListOfLists[i][j])
 ```
 
-<p align="center">
-  <img src="/figs/rows-first.jpg" alt="rows first"/>
-</p>
+![rows first](/figs/rows-first.jpg)
 
 How can we iterate over the _columns_ first?  To do this, we need to assume that *the length of every row is the same* (since we're working with tables, we can make this assumption).  Then, we simply need to swap the two FOR loops, using the first row to determine the number of columns:
 
@@ -96,8 +94,6 @@ for j in range(len(ListOfLists[0])):
     print(ListOfLists[i][j])
 ```
 
-<p align="center">
-  <img src="/figs/cols-first.jpg" alt="cols first"/>
-</p>
+![cols first](/figs/cols-first.jpg)
 
 Remember to **always** index into the variable with rows (`i`) and then columns (`j`).
