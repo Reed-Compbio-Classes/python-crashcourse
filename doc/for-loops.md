@@ -66,9 +66,7 @@ there again
 
 When we began to work with motifs, we represented them as a **list of strings**.  It is often useful to consider them as a table, where each string is a row and we can retrieve a character from a certain column.  This allows us to do things like count the number of `A/C/G/T` in a column to build a counts table or a frequency table.
 
-<p align="center">
-  <img src="/figs/list-of-strings.png" alt="lists-of-strings"/>
-</p>
+![list of strings](/figs/list-of-strings.png)
 
 You can use this "double indexing" for a **lists of lists** as well: the variable below represents a table with four rows and three columns.
 

@@ -8,9 +8,7 @@ nav_order: 12
 
 A graph represents a set of **objects** and **pairwise connections** between them. In the example below, there are five objects (called **nodes**, here labled a,b,c,d,e) and six directed connections (called **directed edges**).  
 
-<p align="center">
-  <img src="/figs/graph-example.png" alt="graph example"/>
-</p>
+![graph example](/figs/graph-example.png)
 
 Graphs are mathematical objects, and there are many relationships that can be captured by graphs. For example, in a Twitter network, the nodes may be people and directed edges may indicate who follows whom (image from a [nice introduction to graph theory](https://medium.com/basecs/a-gentle-introduction-to-graph-theory-77969829ead8)).  In this example, the post's author Vaidehi follows Beyonc\`{e} but Beyonc\`{e} doesn't follow her back.
 
